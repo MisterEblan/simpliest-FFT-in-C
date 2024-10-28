@@ -3,6 +3,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Description:
+ *   Calculate amplitudes of the FFT algorithm output.
+ *
+ * Input:
+ *   fftResult - result of the FFT algorithm that contains complex numbers.
+ *   N - number of points.
+ *
+ * Output:
+ *   Returns a pointer to double that contains calculated amplitudes.
+ **/
 double *findAmplitude(complex double *fftResult, int N) {
   double *result = (double *)malloc(N * sizeof(double));
 
@@ -14,6 +25,15 @@ double *findAmplitude(complex double *fftResult, int N) {
   return result;
 }
 
+/**
+ * Description:
+ *   Calculate frequencies for the exact number of points.
+ * Input:
+ *   N - number of points.
+ *   sampleRate - sample rate of the signal.
+ * Output:
+ *   Returns a pointer to double that contains calculated frequencies.
+ **/
 double *findFrequency(int N, int sampleRate) {
   double *result = (double *)malloc(N * sizeof(double));
 
@@ -23,10 +43,21 @@ double *findFrequency(int N, int sampleRate) {
   return result;
 }
 
+/**
+ * Description:
+ *   Prints very simple spectrogram in console
+ * Input:
+ *   freqs - pointer to double with calculated frequencies.
+ *   amps - pointer to double with calculated amplitudes.
+ * Output:
+ *   Returns nothing, prints spectrogram in console.
+ **/
 void printSpectre(double *freqs, double *amps) {
-  printf("\nГистограмма:\n");
+  printf("\nSpectrogram:\n");
   for (int i = 0; i < 32; i++) {
     printf("%10f: ", freqs[i]);
+    // The line below is responsible for scale
+    // of spectrogram
     for (double j = 0.00; j <= amps[i]; j += 10)
       printf("#");
     printf("\n");

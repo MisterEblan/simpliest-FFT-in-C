@@ -2,6 +2,19 @@
 #include <math.h>
 #include <stdlib.h>
 
+// FFT algorithm
+/**
+ * Description:
+ *  Implementation of Fast Fourier Transform (FFT) algorithm.
+ *
+ * Input:
+ *  X - complex double pointer that contains points of signal.
+ *  N - number of points (number of elements of X actually).
+ *
+ * Output:
+ *  Returns new pointer to complex double (don't mutate input pointer)
+ *  that contains results of FFT algorithm.
+ **/
 complex double *fft(complex double *X, int N) {
   if (N <= 1)
     return X;
