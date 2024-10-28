@@ -23,7 +23,7 @@ I haven't made a lot of .sh scripts yet, but I've made two little scripts to bui
 
 By default `run.sh` execute `fft.out` (the result of building a project) and stream it in `spectre.txt` without any output in console.
 
-If `-p` flag added it will first print output in console and then run the executable again and strem it in `spectre.txt`.
+If `-p` flag added it will first print output in console and then run the executable again and stream it in `spectre.txt`.
 
 ### What's the output?
 
