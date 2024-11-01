@@ -13,6 +13,7 @@
  * Input:
  *  X - complex double pointer that contains points of signal.
  *  N - number of points (number of elements of X actually).
+ *  Should be a power of 2!
  *
  * Output:
  *  Returns new pointer to complex double (don't mutate input pointer)
