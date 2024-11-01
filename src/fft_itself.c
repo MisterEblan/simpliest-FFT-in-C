@@ -1,6 +1,9 @@
 #include <complex.h>
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
+
+#define log2(n) ((n > 0) && (n & (n - 1)) == 0)
 
 // FFT algorithm
 /**
@@ -16,6 +19,11 @@
  *  that contains results of FFT algorithm.
  **/
 complex double *fft(complex double *X, int N) {
+  if (!log2(N)) {
+    printf("N should be a power of 2!\n");
+    exit(-1);
+  }
+
   if (N <= 1)
     return X;
 
